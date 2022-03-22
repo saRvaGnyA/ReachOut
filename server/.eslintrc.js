@@ -9,6 +9,6 @@ module.exports = {
     ecmaVersion: 'latest',
   },
   rules: {
-    'linebreak-style': 'windows',
+    'linebreak-style': 0,
   },
 };
