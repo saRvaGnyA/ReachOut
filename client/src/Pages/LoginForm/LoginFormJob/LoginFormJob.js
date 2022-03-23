@@ -1,18 +1,33 @@
 import { useEffect, useState } from 'react';
 import './LoginFormJob.css'
 import { useSpeechSynthesis } from "react-speech-kit";
+import SpeechRecognition, { useSpeechRecognition } from "react-speech-recognition";
 
 function LoginFormJob(){
     const { speak } = useSpeechSynthesis();
-    const { transcript } = useSpeechRecognition()
+    const { transcript, resetTranscript} = useSpeechRecognition();
+
     const [value,setValue]=useState("Do you want to fill the form by speech.Press Tab space for yes.");
+    /*    
     useEffect(()=>{
-        //speak({ text:value})
-    },[]);
+        speak({ text:value});
+        return ()=>{
+
+        }
+    },[])
+    */
 
     let voiceSelection=true;
     let logInStatus="Logged In Successfully";
     let signUpStatus="";
+
+    let [email,setEmail]=useState("");
+
+    const startListening = () => SpeechRecognition.startListening({ continuous: true });
+
+    function stopSpeechToText(){
+        resetTranscript();
+    }
 
     function emailResponse(){
         if(voiceSelection===true){
@@ -68,12 +83,15 @@ function LoginFormJob(){
                                             <div className="section text-center">
                                                 <h4 className="mb-4 pb-3">Log In</h4>
                                                 <div className="form-group">
-                                                    <input type="email" name="logemail" className="form-style" placeholder="Your Email" id="logemail" autocomplete="off" onSelect={emailResponse}/>
+                                                    <input type="email" name="logemail" className="form-style" placeholder="Your Email" id="logemail" autocomplete="off" onClick={emailResponse} onFocus={startListening} onBlur={stopSpeechToText} value={transcript} 
+                                                    onChange={(e)=>{setEmail(e.target.value)}} 
+                                                    />
+                                                    <p>{transcript}</p>
                                                     <i className="input-icon uil uil-at"></i>
                                                 </div>	
                                                 <div className="form-group mt-2">
                                                     <input type="password" name="logpass" className="form-style" placeholder="Your Password" id="logpass" autocomplete="off"
-                                                    onSelect={passwordResponse}/>
+                                                    onClick={passwordResponse} onFocus={startListening} onBlur={stopSpeechToText}/>
                                                     <i className="input-icon uil uil-lock-alt" ></i>
                                                 </div>
                                                 <a href="#" className="btn mt-4" onClick={submitLoginResponse}>submit</a>
@@ -86,15 +104,17 @@ function LoginFormJob(){
                                             <div className="section text-center">
                                                 <h4 className="mb-4 pb-3">Sign Up</h4>
                                                 <div className="form-group">
-                                                    <input type="text" name="logname" className="form-style" placeholder="Your Full Name" id="logname" autocomplete="off" onSelect={fullNameResponse}/>
+                                                    <input type="text" name="logname" className="form-style" placeholder="Your Full Name" id="logname" autocomplete="off" onClick={fullNameResponse} onFocus={startListening} onBlur={stopSpeechToText} value={transcript} 
+                                                    onChange={(e)=>{setEmail(e.target.value)}}/>
                                                     <i className="input-icon uil uil-user"></i>
                                                 </div>	
                                                 <div className="form-group mt-2">
-                                                    <input type="email" name="logemail" className="form-style" placeholder="Your Email" id="logemail" autocomplete="off" onSelect={emailResponse}/>
+                                                    <input type="email" name="logemail" className="form-style" placeholder="Your Email" id="logemail" autocomplete="off" onClick={emailResponse} onFocus={startListening} onBlur={stopSpeechToText} value={transcript} 
+                                                    onChange={(e)=>{setEmail(e.target.value)}}/>
                                                     <i className="input-icon uil uil-at"></i>
                                                 </div>	
                                                 <div className="form-group mt-2">
-                                                    <input type="password" name="logpass" className="form-style" placeholder="Your Password" id="logpass" autocomplete="off" onSelect={passwordResponse}/>
+                                                    <input type="password" name="logpass" className="form-style" placeholder="Your Password" id="logpass" autocomplete="off" onClick={passwordResponse} onFocus={startListening} onBlur={stopSpeechToText}/>
                                                     <i className="input-icon uil uil-lock-alt"></i>
                                                 </div>
                                                 <a href="#" className="btn mt-4" onClick={submitSignUpResponse}>submit</a>

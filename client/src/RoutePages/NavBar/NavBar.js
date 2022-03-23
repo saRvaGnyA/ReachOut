@@ -22,7 +22,7 @@ function NavBar(){
     }
     ],
     logo:{
-      text: 'Responsive Navbar React'
+      text: 'ReachOut'
     },
     style:{
       barStyles: {
