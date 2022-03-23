@@ -26,7 +26,7 @@ function NavBar(){
     },
     {
       text: 'Greviences',
-      link: '/greviences'
+      link: '/grevience'
     }
     ],
     logo:{

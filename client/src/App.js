@@ -7,6 +7,7 @@ import HomePage from './Pages/HomePage/HomePage.js'
 import LoginFormJob from './Pages/LoginForm/LoginFormJob/LoginFormJob';
 import JobApplicationForm from './Pages/JobApplicationForm/JobApplicationForm';
 import JobHiringForm from './Pages/JobHiringForm/JobHiringForm';
+import GrevienceForm from './Pages/ContactUs/GrevienceForm';
 
 function App() {
     return(
@@ -19,6 +20,7 @@ function App() {
                 <Route exact path="/login" element={<LoginFormJob />}/>
                 <Route exact path="/apply" element={<JobApplicationForm />}/>
                 <Route exact path="/hire" element={<JobHiringForm />} />
+                <Route exact path="/grevience" element={<GrevienceForm/>}/>
             </Routes>
             <Footer/>
         </div>
