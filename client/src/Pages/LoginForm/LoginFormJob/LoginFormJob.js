@@ -86,7 +86,6 @@ function LoginFormJob(){
                                                     <input type="email" name="logemail" className="form-style" placeholder="Your Email" id="logemail" autocomplete="off" onClick={emailResponse} onFocus={startListening} onBlur={stopSpeechToText} value={transcript} 
                                                     onChange={(e)=>{setEmail(e.target.value)}} 
                                                     />
-                                                    <p>{transcript}</p>
                                                     <i className="input-icon uil uil-at"></i>
                                                 </div>	
                                                 <div className="form-group mt-2">

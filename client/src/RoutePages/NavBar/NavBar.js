@@ -13,12 +13,20 @@ function NavBar(){
         link: '/login'
     },
     {
-        text: 'Custom',
-        link: '/'
+        text: 'Apply',
+        link: '/apply'
     },
     {
-        text: 'Contact',
-        link: '/'
+        text: 'Hire',
+        link: '/hire'
+    },
+    {
+      text: 'Preferences',
+      link: '/pref'
+    },
+    {
+      text: 'Greviences',
+      link: '/greviences'
     }
     ],
     logo:{
