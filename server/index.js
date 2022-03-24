@@ -11,6 +11,7 @@ app.use(express.json());
 
 // ROUTES
 app.use('/schemes', require('./routes/schemes'));
+app.use('/auth', require('./routes/auth'));
 
 const port = process.env.PORT;
 app.listen(port, () => {
