@@ -7,6 +7,20 @@ function JobHiringForm(){
     let [second,setSecond]=useState(false);
     let [third,setThird]=useState(false);
 
+    let [companyName,setCompanyName]=useState("");
+    let [gstNumber,setGstNumber]=useState("");
+    let [companyEmail,setCompanyEmail]=useState("");
+    
+    let [jobPosition,setJobPosition]=useState("");
+    let [salary,setSalary]=useState("");
+    let [jobType,setJobType]=useState("");
+    let [qualification,setQualification]=useState("");
+    let [sector,setSector]=useState("");
+    
+    let [location,setLocation]=useState("");
+    let [disabilityType,setDisabilityType]=useState("");
+    let [disability,setDisability]=useState("");
+
     function firstTrue(){
         setFirst(true);
         setSecond(false);
@@ -34,6 +48,21 @@ function JobHiringForm(){
         setSecond(false);
     }
 
+    function submitJobHiring(e){
+        e.preventDefault();
+        console.log(companyName);
+        console.log(gstNumber);
+        console.log(companyEmail);
+        console.log(jobPosition);
+        console.log(salary);
+        console.log(jobType);
+        console.log(qualification);
+        console.log(sector);
+        console.log(location);
+        console.log(disabilityType);
+        console.log(disability);
+    }
+
     return (
         <div>
             <div className="relative h-full text-gray-100 bg-primary rounded-lg shadow-showcase">
@@ -50,19 +79,6 @@ function JobHiringForm(){
             </svg>
             </button>
         </div>
-            {/* <header className="relative z-20 flex px-10 py-8">
-            <div className="flex items-center ml-auto">
-            <div className="leading-none mr-3">
-                <div className="mb-1">Welcome back,</div>
-                <span className="text-accent">Notifees</span>
-            </div>
-            <div className="h-10 w-10 flex items-center justify-center bg-accent-gradient rounded-lg flex-shink-0">
-                <svg viewBox="0 0 20 20" fill="currentColor" className="h-8 w-8 text-green-900">
-                <path fill-rule="evenodd" d="M10 2a1 1 0 00-1 1v1a1 1 0 002 0V3a1 1 0 00-1-1zM4 4h3a3 3 0 006 0h3a2 2 0 012 2v9a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2zm2.5 7a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm2.45 4a2.5 2.5 0 10-4.9 0h4.9zM12 9a1 1 0 100 2h3a1 1 0 100-2h-3zm-1 4a1 1 0 011-1h2a1 1 0 110 2h-2a1 1 0 01-1-1z" clip-rule="evenodd" />
-            </svg>
-            </div>
-            </div>
-        </header> */}
         <main className="relative z-10 flex flex-col lg:flex-row mx-10 sm:mx-20 md:mx-32">
             <div className="lg:w-7/12 lg:mr-16 space-y-6">
             <section>
@@ -87,20 +103,6 @@ function JobHiringForm(){
                 </div>
             </section>
             <section>
-                {/*<header className="font-semibold text-primary-lightest text-xl px-8 mb-3">Proxies</header>
-                <div className="flex flex-wrap bg-primary-light bg-opacity-75 bg-blur p-8 rounded-lg">
-                <div className="mr-4 tracking-widest leading-loose">
-                    <p>168.48.230.224:2170:hidden:testing</p>
-                    <p>168.48.230.224:2170:hidden:testing</p>
-                    <p>168.48.230.224:2170:hidden:testing</p>
-                    <p>168.48.230.224:2170:hidden:testing</p>
-                    <p>168.48.230.224:2170:hidden:testing</p>
-                    <p>168.48.230.224:2170:hidden:testing</p>
-                </div>
-                <div className="ml-auto">
-                    <button className="py-2 px-6 text-accent bg-primary-lighter rounded-lg">Copy all</button>
-                </div>
-                </div>*/}
             </section>
             </div>
             <div className="relative lg:w-5/12">
@@ -108,21 +110,87 @@ function JobHiringForm(){
                 <header className="font-semibold text-primary-lightest text-xl px-8 mb-3">Hiring for Job</header>
                 <div className="bg-primary-light bg-opacity-75 bg-blur rounded-lg p-8 space-y-4">
                 {first ? (<div>
-                    <input type="text" placeholder="Company Name" className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg" style={{marginBottom:"10px"}} />
-                    <input type="text" placeholder="GST Number" className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg" style={{marginBottom:"10px"}}/>
-                    <input type="text" placeholder="Company Email" className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg" style={{marginBottom:"10px"}}/>
-                    <input type="text" placeholder="" className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg" style={{marginBottom:"10px"}}/>
-                    <input type="text" placeholder="" className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg" style={{marginBottom:"10px"}}/>
+                    <input 
+                        type="text" 
+                        placeholder="Company Name" 
+                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg" 
+                        style={{marginBottom:"10px"}}
+                        value={companyName}
+                        onChange={(e)=>{setCompanyName(e.target.value)}}
+                        />
+                    <input 
+                        type="text" 
+                        placeholder="GST Number" 
+                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg" 
+                        style={{marginBottom:"10px"}}
+                        value={gstNumber}
+                        onChange={(e)=>{setGstNumber(e.target.value)}}
+                        />
+                    <input 
+                        type="text" 
+                        placeholder="Company Email" 
+                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg" 
+                        style={{marginBottom:"10px"}}
+                        value={companyEmail}
+                        onChange={(e)=>{setCompanyEmail(e.target.value)}}
+                        />
+                    <input 
+                        type="text" 
+                        placeholder="" 
+                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg" 
+                        style={{marginBottom:"10px"}}
+                        />
+                    <input 
+                        type="text" 
+                        placeholder="" 
+                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg" 
+                        style={{marginBottom:"10px"}}
+                        />
                     <div className="flex">
                         <button className="mt-2 px-6 py-3 bg-accent-gradient rounded-lg text-primary font-semibold ml-auto" onClick={firstFalse}>Next</button>
                     </div>
                 </div>):(<div></div>)}
                 {second?(<div>
-                    <input type="text" placeholder="Job Position" className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg" style={{marginBottom:"10px"}}/>
-                    <input type="text" placeholder="Salary" className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg" style={{marginBottom:"10px"}}/>
-                    <input type="text" placeholder="Job Type" className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg" style={{marginBottom:"10px"}}/>
-                    <input type="text" placeholder="Qualification" className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg" style={{marginBottom:"10px"}}/>
-                    <input type="text" placeholder="Sector" className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg" style={{marginBottom:"10px"}}/>
+                    <input 
+                        type="text" 
+                        placeholder="Job Position" 
+                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg" 
+                        style={{marginBottom:"10px"}}
+                        value={jobPosition}
+                        onChange={(e)=>{setJobPosition(e.target.value)}}
+                        />
+                    <input 
+                        type="text" 
+                        placeholder="Salary" 
+                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg" 
+                        style={{marginBottom:"10px"}}
+                        value={salary}
+                        onChange={(e)=>{setSalary(e.target.value)}}
+                        />
+                    <input 
+                        type="text" 
+                        placeholder="Job Type" 
+                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg" 
+                        style={{marginBottom:"10px"}}
+                        value={jobType}
+                        onChange={(e)=>{setJobType(e.target.value)}}
+                        />
+                    <input 
+                        type="text" 
+                        placeholder="Qualification" 
+                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg" 
+                        style={{marginBottom:"10px"}}
+                        value={qualification}
+                        onChange={(e)=>{setQualification(e.target.value)}}
+                        />
+                    <input 
+                        type="text" 
+                        placeholder="Sector" 
+                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg" 
+                        style={{marginBottom:"10px"}}
+                        value={sector}
+                        onChange={(e)=>{setSector(e.target.value)}}
+                        />
                     <div style={{display:"flex",flexDirection:"row",justifyContent:"space-between"}}>
                         <div className="flex">
                             <button className="mt-2 px-6 py-3 bg-accent-gradient rounded-lg text-primary font-semibold ml-auto" onClick={firstTrue}>Previous</button>
@@ -134,31 +202,40 @@ function JobHiringForm(){
                 </div>):(<div></div>)}
                 </div>
                 {third ? (<div>
-                    <input type="text" placeholder="Location" className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg" style={{marginBottom:"10px"}}/>
-                    <input type="text" placeholder="Disability Type" className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg" style={{marginBottom:"10px"}}/>
-                    <input type="text" placeholder="Disability" className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg" style={{marginBottom:"10px"}}/>
-                    {/* <input type="text" placeholder="" className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg" style={{marginBottom:"10px"}}/>
-                    <input type="text" placeholder="" className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg" style={{marginBottom:"10px"}}/> */}
+                    <input 
+                        type="text" 
+                        placeholder="Location" 
+                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg" 
+                        style={{marginBottom:"10px"}}
+                        value={location}
+                        onChange={(e)=>{setLocation(e.target.value)}}
+                        />
+                    <input 
+                        type="text" 
+                        placeholder="Disability Type" 
+                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg" 
+                        style={{marginBottom:"10px"}}
+                        value={disabilityType}
+                        onChange={(e)=>{setDisabilityType(e.target.value)}}
+                        />
+                    <input 
+                        type="text" 
+                        placeholder="Disability" 
+                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg" 
+                        style={{marginBottom:"10px"}}
+                        value={disability}
+                        onChange={(e)=>{setDisability(e.target.value)}}
+                        />
                     <div style={{display:"flex",flexDirection:"row",justifyContent:"space-between"}}>
                         <div className="flex">
                             <button className="mt-2 px-6 py-3 bg-accent-gradient rounded-lg text-primary font-semibold ml-auto" onClick={secondTrue}>Previous</button>
                         </div>
                         <div className="flex">
-                            <button className="mt-2 px-6 py-3 bg-accent-gradient rounded-lg text-primary font-semibold ml-auto">Submit Application</button>
+                            <button onClick={submitJobHiring}className="mt-2 px-6 py-3 bg-accent-gradient rounded-lg text-primary font-semibold ml-auto">Submit Application</button>
                         </div>
                     </div>
                 </div>):(<div></div>)}
             </section>
-            {/*<section className="absolute w-plans left-0 mt-16 ml-20">
-                <header className="font-semibold text-primary-lightest text-xl px-6 mb-3">Plans</header>
-                <div className="bg-primary-light bg-opacity-90 bg-blur rounded-lg p-8 space-y-4">
-                <div className="ml-32 my-10">
-                    <p className="text-xl text-accent">Almost out of data?</p>
-                    <p className="text-xl text-accent">Purchase here your new plan</p>
-                    <button className="px-4 py-2 mt-4 bg-accent-gradient rounded-lg text-primary font-semibold ml-auto">View plans</button>
-                </div>
-                </div>
-            </section>*/}
             </div>
         </main>
         <div className="absolute top-0 bottom-0 left-0 right-0 h-full w-full overflow-hidden">

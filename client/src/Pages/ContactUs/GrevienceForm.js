@@ -1,6 +1,20 @@
 import './GrevienceForm.css';
+import {useState} from "react";
 
 function GrevienceForm(){
+
+    let [name,setName]=useState("");
+    let [email,setEmail]=useState("");
+    let [contactNumber,setContactNumber]=useState("");
+    let [grevience,setGrevience]=useState("");
+
+    function submitGrevience(){
+        console.log(name);
+        console.log(email);
+        console.log(contactNumber);
+        console.log(grevience);
+    }
+
     return (
     <div>
         <div class="background">
@@ -29,19 +43,39 @@ function GrevienceForm(){
                 <div class="screen-body-item">
                 <div class="app-form">
                     <div class="app-form-group">
-                    <input class="app-form-control" placeholder="Name"/>
+                    <input 
+                        class="app-form-control" 
+                        placeholder="Name"
+                        value={name}
+                        onChange={(e)=>{setName(e.target.value)}}
+                        />
                     </div>
                     <div class="app-form-group">
-                    <input class="app-form-control" placeholder="Email"/>
+                    <input 
+                        class="app-form-control" 
+                        placeholder="Email"
+                        value={email}
+                        onChange={(e)=>{setEmail(e.target.value)}}
+                        />
                     </div>
                     <div class="app-form-group">
-                    <input class="app-form-control" placeholder="Contact no"/>
+                    <input 
+                        class="app-form-control" 
+                        placeholder="Contact no"
+                        value={contactNumber}
+                        onChange={(e)=>{setContactNumber(e.target.value)}}
+                        />
                     </div>
                     <div class="app-form-group message">
-                    <input class="app-form-control" placeholder="Grevience"/>
+                    <input 
+                        class="app-form-control" 
+                        placeholder="Grevience"
+                        value={grevience}
+                        onChange={(e)=>{setGrevience(e.target.value)}}
+                        />
                     </div>
                     <div class="app-form-group buttons">
-                    <button class="app-form-button">SEND</button>
+                    <button onClick={submitGrevience}class="app-form-button">SEND</button>
                     </div>
                 </div>
                 </div>
