@@ -7,63 +7,172 @@ function LoginFormJob(){
     const { speak } = useSpeechSynthesis();
     const { transcript, resetTranscript} = useSpeechRecognition();
 
-    const [value,setValue]=useState("Do you want to fill the form by speech.Press Tab space for yes.");
-    /*    
-    useEffect(()=>{
-        speak({ text:value});
-        return ()=>{
 
-        }
-    },[])
-    */
-
-    let voiceSelection=true;
-    let logInStatus="Logged In Successfully";
-    let signUpStatus="";
 
     let [email,setEmail]=useState("");
+    let [password,setPassword]=useState("");
+    let [onFocusEmail,setOnFocusEmail]=useState(false);
+    let [onFocusPassword,setOnFocusPassword]=useState(false);
+
+
+
+    let [signUpUsername,setSignUpUsername]=useState("");
+    let [signUpEmail,setSignUpEmail]=useState("");
+    let [signUpPassword,setSignUpPassword]=useState("");
+    let [signUpOnFocusUsername,setSignUpOnFocusUsername]=useState(false);
+    let [signUpOnFocusEmail,setSignUpOnFocusEmail]=useState(false);
+    let [signUpOnFocusPassword,setSignUpOnFocusPassword]=useState(false);
+    
+
 
     const startListening = () => SpeechRecognition.startListening({ continuous: true });
+    const stopListening = () =>SpeechRecognition.stopListening();
 
-    function stopSpeechToText(){
-        resetTranscript();
+
+
+    let [voiceFill,setVoiceFill]=useState(false);
+
+    
+    
+    function one(){
+        setOnFocusEmail(true);
+        setOnFocusPassword(false);
+        if(email===""){
+            speak({text:"Press Insert to start and Escape to end the input."});
+            resetTranscript();
+        }
+        else{
+            speak({text:"Input already filled.Press Insert to override and escape to stop."})
+        }
+    }
+    function two(event){
+        if(event.keyCode===45){
+            resetTranscript();
+            startListening();
+            console.log("Listening started");
+        }
+        else if(event.keyCode===27){
+            console.log(transcript);
+            stopListening();
+            console.log("Listening stopped");
+            setEmail(transcript);
+            resetTranscript();
+        }
+    }
+    function three(){
+        setOnFocusEmail(false);
+        setOnFocusPassword(true);
+        if(password===""){
+            speak({text:"Press Insert to start and Escape to end the input."});
+            resetTranscript();
+        }
+        else{
+            speak({text:"Input already filled.Press Insert to override and escape to stop."})
+        }
+    }
+    function four(event){
+        if(event.keyCode===45){
+            resetTranscript();
+            startListening();
+            console.log("Listening started");
+        }
+        else if(event.keyCode===27){
+            console.log(transcript);
+            stopListening();
+            console.log("Listening stopped");
+            setPassword(transcript);
+            resetTranscript();
+        }
+    }
+    function oneSignUp(){
+        setSignUpOnFocusUsername(true);
+        setSignUpOnFocusEmail(false);
+        setSignUpOnFocusPassword(false);
+        if(signUpUsername===""){
+            speak({text:"Press Insert to start and Escape to end the input."});
+            resetTranscript();
+        }
+        else{
+            speak({text:"Input already filled.Press Insert to override and escape to stop."})
+        }
+    }
+    function twoSignUp(event){
+        if(event.keyCode===45){
+            resetTranscript();
+            startListening();
+            console.log("Listening started");
+        }
+        else if(event.keyCode===27){
+            console.log(transcript);
+            stopListening();
+            console.log("Listening stopped");
+            setSignUpUsername(transcript);
+            resetTranscript();
+        }
+    }
+    function threeSignUp(){
+        setSignUpOnFocusUsername(false);
+        setSignUpOnFocusEmail(true);
+        setSignUpOnFocusPassword(false);
+        if(signUpEmail===""){
+            speak({text:"Press Insert to start and Escape to end the input."});
+            resetTranscript();
+        }
+        else{
+            speak({text:"Input already filled.Press Insert to override and escape to stop."})
+        }
+    }
+    function fourSignUp(event){
+        if(event.keyCode===45){
+            resetTranscript();
+            startListening();
+            console.log("Listening started");
+        }
+        else if(event.keyCode===27){
+            console.log(transcript);
+            stopListening();
+            console.log("Listening stopped");
+            setSignUpEmail(transcript);
+            resetTranscript();
+        }
+    }
+    function fiveSignUp(){
+        setSignUpOnFocusUsername(false);
+        setSignUpOnFocusEmail(false);
+        setSignUpOnFocusPassword(true);
+        if(signUpPassword===""){
+            speak({text:"Press Insert to start and Escape to end the input."});
+            resetTranscript();
+        }
+        else{
+            speak({text:"Input already filled.Press Insert to override and escape to stop."})
+        }
+    }
+    function sixSignUp(event){
+        if(event.keyCode===45){
+            resetTranscript();
+            startListening();
+            console.log("Listening started");
+        }
+        else if(event.keyCode===27){
+            console.log(transcript);
+            stopListening();
+            console.log("Listening stopped");
+            setSignUpPassword(transcript);
+            resetTranscript();
+        }
     }
 
-    function emailResponse(){
-        if(voiceSelection===true){
-            speak({text:"Enter your Email"});  
-        }
+    function submitLoginResponse(e){
+        e.preventDefault();
+        console.log(email);
+        console.log(password);
     }
-    function passwordResponse(){
-        if(voiceSelection===true){
-            speak({text:"Enter your Password"});
-        }
-    }
-
-    function fullNameResponse(){
-        if(voiceSelection===true){
-            speak({text:"Enter your Full Name"});
-        }
-    }
-    function submitLoginResponse(){
-        if(voiceSelection===true){
-            if(logInStatus==="Logged In Successfully"){
-                speak({text:"User Logged In Succesfully"})
-            }
-            else{
-                speak({text:"Invalid Username or Email or Password"})
-            }
-        }
-    }
-    function submitSignUpResponse(){
-        if(voiceSelection===true){
-            if(signUpStatus==="User Registered Successfully"){
-                speak({text:"User Registered Succesfully"})
-            }
-            else{
-                speak({text:"User Already Exists"})
-            }
-        }
+    function submitSignUpResponse(e){
+        e.preventDefault();
+        console.log(signUpUsername)
+        console.log(signUpEmail);
+        console.log(signUpPassword);
     }
 
     return (
@@ -83,14 +192,58 @@ function LoginFormJob(){
                                             <div className="section text-center">
                                                 <h4 className="mb-4 pb-3">Log In</h4>
                                                 <div className="form-group">
-                                                    <input type="email" name="logemail" className="form-style" placeholder="Your Email" id="logemail" autocomplete="off" onClick={emailResponse} onFocus={startListening} onBlur={stopSpeechToText} value={transcript} 
-                                                    onChange={(e)=>{setEmail(e.target.value)}} 
-                                                    />
+                                                    {voiceFill?(
+                                                        <input 
+                                                            type="email" 
+                                                            name="logemail" 
+                                                            className="form-style" 
+                                                            placeholder="Your Email" 
+                                                            id="logemail" 
+                                                            autocomplete="off"
+                                                            value={onFocusEmail?(transcript):(email)}
+                                                            onFocus={one}
+                                                            onKeyDown={(e)=>two(e)}
+                                                            onChange={(e)=>{setEmail(e.target.value)}} 
+                                                        />
+                                                        ):(
+                                                        <input 
+                                                            type="email" 
+                                                            name="logemail" 
+                                                            className="form-style" 
+                                                            placeholder="Your Email" 
+                                                            id="logemail" 
+                                                            autocomplete="off"
+                                                            value={email}
+                                                            onChange={(e)=>{setEmail(e.target.value)}} 
+                                                        />
+                                                    )}
                                                     <i className="input-icon uil uil-at"></i>
                                                 </div>	
                                                 <div className="form-group mt-2">
-                                                    <input type="password" name="logpass" className="form-style" placeholder="Your Password" id="logpass" autocomplete="off"
-                                                    onClick={passwordResponse} onFocus={startListening} onBlur={stopSpeechToText}/>
+                                                    {voiceFill?(
+                                                        <input 
+                                                            type="password" 
+                                                            name="logpass" 
+                                                            className="form-style" 
+                                                            placeholder="Your Password" 
+                                                            id="logpass" 
+                                                            autocomplete="off"
+                                                            value={onFocusPassword?(transcript):(password)}
+                                                            onFocus={three}
+                                                            onKeyDown={(e)=>four(e)}
+                                                            onChange={(e)=>{setPassword(e.target.value)}}
+                                                        />):(
+                                                        <input 
+                                                            type="password" 
+                                                            name="logpass" 
+                                                            className="form-style" 
+                                                            placeholder="Your Password" 
+                                                            id="logpass" 
+                                                            autocomplete="off"
+                                                            value={password}
+                                                            onChange={(e)=>{setPassword(e.target.value)}}
+                                                        />
+                                                    )}
                                                     <i className="input-icon uil uil-lock-alt" ></i>
                                                 </div>
                                                 <a href="#" className="btn mt-4" onClick={submitLoginResponse}>submit</a>
@@ -103,17 +256,84 @@ function LoginFormJob(){
                                             <div className="section text-center">
                                                 <h4 className="mb-4 pb-3">Sign Up</h4>
                                                 <div className="form-group">
-                                                    <input type="text" name="logname" className="form-style" placeholder="Your Full Name" id="logname" autocomplete="off" onClick={fullNameResponse} onFocus={startListening} onBlur={stopSpeechToText} value={transcript} 
-                                                    onChange={(e)=>{setEmail(e.target.value)}}/>
+                                                    {voiceFill?(
+                                                        <input 
+                                                        type="text" 
+                                                        name="logname" 
+                                                        className="form-style" 
+                                                        placeholder="Your Full Name" 
+                                                        id="logname" 
+                                                        autocomplete="off"
+                                                        value={signUpOnFocusUsername?(transcript):(signUpUsername)}
+                                                        onFocus={oneSignUp}
+                                                        onKeyDown={(e)=>twoSignUp(e)}
+                                                        onChange={(e)=>{setSignUpUsername(e.target.value)}}
+                                                        />):(
+                                                        <input 
+                                                        type="text" 
+                                                        name="logname" 
+                                                        className="form-style" 
+                                                        placeholder="Your Full Name" 
+                                                        id="logname" 
+                                                        autocomplete="off"
+                                                        value={signUpUsername}
+                                                        onChange={(e)=>{setSignUpUsername(e.target.value)}}
+                                                        />
+                                                        )}
                                                     <i className="input-icon uil uil-user"></i>
                                                 </div>	
                                                 <div className="form-group mt-2">
-                                                    <input type="email" name="logemail" className="form-style" placeholder="Your Email" id="logemail" autocomplete="off" onClick={emailResponse} onFocus={startListening} onBlur={stopSpeechToText} value={transcript} 
-                                                    onChange={(e)=>{setEmail(e.target.value)}}/>
+                                                    {voiceFill?(
+                                                        <input 
+                                                        type="email" 
+                                                        name="logemail" 
+                                                        className="form-style" 
+                                                        placeholder="Your Email" 
+                                                        id="logemail" 
+                                                        autocomplete="off"
+                                                        value={signUpOnFocusEmail?(transcript):(signUpEmail)}
+                                                        onFocus={threeSignUp}
+                                                        onKeyDown={(e)=>fourSignUp(e)}
+                                                        onChange={(e)=>{setSignUpEmail(e.target.value)}}
+                                                    />):(
+                                                    <input 
+                                                        type="email" 
+                                                        name="logemail" 
+                                                        className="form-style" 
+                                                        placeholder="Your Email" 
+                                                        id="logemail" 
+                                                        autocomplete="off"
+                                                        value={signUpEmail}
+                                                        onChange={(e)=>{setSignUpEmail(e.target.value)}}
+                                                    />
+                                                    )}
                                                     <i className="input-icon uil uil-at"></i>
                                                 </div>	
                                                 <div className="form-group mt-2">
-                                                    <input type="password" name="logpass" className="form-style" placeholder="Your Password" id="logpass" autocomplete="off" onClick={passwordResponse} onFocus={startListening} onBlur={stopSpeechToText}/>
+                                                    {voiceFill?(
+                                                    <input 
+                                                        type="password" 
+                                                        name="logpass" 
+                                                        className="form-style" 
+                                                        placeholder="Your Password" 
+                                                        id="logpass" 
+                                                        autocomplete="off"
+                                                        value={signUpOnFocusPassword?(transcript):(signUpPassword)}
+                                                        onFocus={fiveSignUp}
+                                                        onKeyDown={(e)=>sixSignUp(e)}
+                                                        onChange={(e)=>{setSignUpPassword(e.target.value)}}
+                                                    />):(
+                                                        <input 
+                                                        type="password" 
+                                                        name="logpass" 
+                                                        className="form-style" 
+                                                        placeholder="Your Password" 
+                                                        id="logpass" 
+                                                        autocomplete="off"
+                                                        value={signUpPassword}
+                                                        onChange={(e)=>{setSignUpPassword(e.target.value)}}
+                                                    />  
+                                                    )}
                                                     <i className="input-icon uil uil-lock-alt"></i>
                                                 </div>
                                                 <a href="#" className="btn mt-4" onClick={submitSignUpResponse}>submit</a>
