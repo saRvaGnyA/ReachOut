@@ -91,3 +91,18 @@ module.exports.loginUser = async (req, res) => {
     res.status(500).json({ success: false, message: 'Internal Server Error' });
   }
 };
+
+module.exports.getUserData = async (req, res) => {
+  try {
+    const user_id = req.user;
+    const user = await pool.query(
+      'SELECT (first_name || \' \' || last_name) AS name, aadhar, email, mobile,age, place, disability_type, disability, severity, qualifications FROM "User" WHERE user_id = $1',
+      [user_id],
+    );
+    res.status(200).json({ success: true, details: user.rows[0] });
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.log(error);
+    res.status(500).json({ success: false, message: 'Internal Server Error' });
+  }
+};
