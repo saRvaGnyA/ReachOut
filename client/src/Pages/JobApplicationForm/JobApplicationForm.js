@@ -760,7 +760,7 @@ function JobApplicationForm() {
                       <input
                         type="text"
                         placeholder="Full Name"
-                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg"
+                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg inputtextcolor"
                         style={{ marginBottom: '10px' }}
                         value={onFocusFullName ? transcript : fullName}
                         onFocus={oneSignUp}
@@ -773,7 +773,7 @@ function JobApplicationForm() {
                       <input
                         type="email"
                         name="email"
-                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg"
+                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg inputtextcolor"
                         style={{ marginBottom: '10px' }}
                         placeholder="Full Name"
                         id="logemail"
@@ -788,7 +788,7 @@ function JobApplicationForm() {
                       <input
                         type="text"
                         placeholder="Mobile"
-                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg"
+                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg inputtextcolor"
                         style={{ marginBottom: '10px' }}
                         value={onFocusMobile ? transcript : mobile}
                         onFocus={threeSignUp}
@@ -801,7 +801,7 @@ function JobApplicationForm() {
                       <input
                         type="email"
                         name="email"
-                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg"
+                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg inputtextcolor"
                         style={{ marginBottom: '10px' }}
                         placeholder="Mobile"
                         id="logemail"
@@ -816,7 +816,7 @@ function JobApplicationForm() {
                       <input
                         type="text"
                         placeholder="Email"
-                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg"
+                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg inputtextcolor"
                         style={{ marginBottom: '10px' }}
                         value={onFocusEmail ? transcript : email}
                         onFocus={fiveSignUp}
@@ -829,7 +829,7 @@ function JobApplicationForm() {
                       <input
                         type="email"
                         name="email"
-                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg"
+                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg inputtextcolor"
                         style={{ marginBottom: '10px' }}
                         placeholder="Email"
                         id="logemail"
@@ -844,7 +844,7 @@ function JobApplicationForm() {
                       <input
                         type="text"
                         placeholder="Aadhar Card number"
-                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg"
+                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg inputtextcolor"
                         style={{ marginBottom: '10px' }}
                         value={onFocusAadhar ? transcript : aadhar}
                         onFocus={sevenSignUp}
@@ -857,7 +857,7 @@ function JobApplicationForm() {
                       <input
                         type="email"
                         name="email"
-                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg"
+                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg inputtextcolor"
                         style={{ marginBottom: '10px' }}
                         placeholder="Aadhar Card Number"
                         id="logemail"
@@ -872,7 +872,7 @@ function JobApplicationForm() {
                       <input
                         type="text"
                         placeholder="Age"
-                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg"
+                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg inputtextcolor"
                         style={{ marginBottom: '10px' }}
                         value={onFocusAge ? transcript : age}
                         onFocus={nineSignUp}
@@ -885,7 +885,7 @@ function JobApplicationForm() {
                       <input
                         type="email"
                         name="email"
-                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg"
+                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg inputtextcolor"
                         style={{ marginBottom: '10px' }}
                         placeholder="Age"
                         id="logemail"
@@ -914,7 +914,7 @@ function JobApplicationForm() {
                       <input
                         type="password"
                         placeholder="Create Password"
-                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg"
+                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg  inputtextcolor"
                         style={{ marginBottom: '10px' }}
                         value={onFocusPassword ? transcript : password}
                         onFocus={elevenSignUp}
@@ -927,7 +927,7 @@ function JobApplicationForm() {
                       <input
                         type="password"
                         name="email"
-                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg"
+                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg inputtextcolor"
                         style={{ marginBottom: '10px' }}
                         placeholder="Create Password"
                         id="logemail"
@@ -942,7 +942,7 @@ function JobApplicationForm() {
                       <input
                         type="text"
                         placeholder="Disability Type"
-                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg"
+                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg inputtextcolor"
                         style={{ marginBottom: '10px' }}
                         value={
                           onFocusDisabilityType ? transcript : disabilityType
@@ -957,7 +957,7 @@ function JobApplicationForm() {
                       <input
                         type="email"
                         name="email"
-                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg"
+                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg inputtextcolor"
                         style={{ marginBottom: '10px' }}
                         placeholder="Disability Type"
                         id="logemail"
@@ -972,7 +972,7 @@ function JobApplicationForm() {
                       <input
                         type="text"
                         placeholder="Disability"
-                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg"
+                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg inputtextcolor"
                         style={{ marginBottom: '10px' }}
                         value={onFocusDisability ? transcript : disability}
                         onFocus={fifteenSignUp}
@@ -985,7 +985,7 @@ function JobApplicationForm() {
                       <input
                         type="text"
                         placeholder="Disability"
-                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg"
+                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg inputtextcolor"
                         style={{ marginBottom: '10px' }}
                         value={disability}
                         onChange={(e) => {
@@ -997,7 +997,7 @@ function JobApplicationForm() {
                       <input
                         type="text"
                         placeholder="Severity"
-                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg"
+                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg inputtextcolor"
                         style={{ marginBottom: '10px' }}
                         value={onFocusSeverity ? transcript : severity}
                         onFocus={seventeenSignUp}
@@ -1010,7 +1010,7 @@ function JobApplicationForm() {
                       <input
                         type="text"
                         placeholder="Severity"
-                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg"
+                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg inputtextcolor"
                         style={{ marginBottom: '10px' }}
                         value={severity}
                         onChange={(e) => {
@@ -1022,7 +1022,7 @@ function JobApplicationForm() {
                       <input
                         type="text"
                         placeholder="Job Preference"
-                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg"
+                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg inputtextcolor"
                         style={{ marginBottom: '10px' }}
                         value={
                           onFocusJobPreference ? transcript : jobPreference
@@ -1037,7 +1037,7 @@ function JobApplicationForm() {
                       <input
                         type="text"
                         placeholder="Job Preference"
-                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg"
+                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg inputtextcolor"
                         style={{ marginBottom: '10px' }}
                         value={jobPreference}
                         onChange={(e) => {
@@ -1080,7 +1080,7 @@ function JobApplicationForm() {
                     <input
                       type="text"
                       placeholder="Qualification"
-                      className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg"
+                      className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg inputtextcolor"
                       style={{ marginBottom: '10px' }}
                       value={onFocusQualification ? transcript : qualification}
                       onFocus={twentyOneSignUp}
@@ -1093,7 +1093,7 @@ function JobApplicationForm() {
                     <input
                       type="text"
                       placeholder="Qualification"
-                      className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg"
+                      className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg inputtextcolor"
                       style={{ marginBottom: '10px' }}
                       value={qualification}
                       onChange={(e) => {
@@ -1105,7 +1105,7 @@ function JobApplicationForm() {
                     <input
                       type="text"
                       placeholder="Sector"
-                      className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg"
+                      className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg inputtextcolor"
                       style={{ marginBottom: '10px' }}
                       value={onFocusSector ? transcript : sector}
                       onFocus={twentythreeSignUp}
@@ -1118,7 +1118,7 @@ function JobApplicationForm() {
                     <input
                       type="text"
                       placeholder="Sector"
-                      className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg"
+                      className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg inputtextcolor"
                       style={{ marginBottom: '10px' }}
                       value={sector}
                       onChange={(e) => {
@@ -1130,7 +1130,7 @@ function JobApplicationForm() {
                     <input
                       type="text"
                       placeholder="Place Preference"
-                      className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg"
+                      className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg inputtextcolor"
                       style={{ marginBottom: '10px' }}
                       value={
                         onFocusPlacePreference ? transcript : placePreference
@@ -1145,7 +1145,7 @@ function JobApplicationForm() {
                     <input
                       type="text"
                       placeholder="Place Preference"
-                      className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg"
+                      className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg inputtextcolor"
                       style={{ marginBottom: '10px' }}
                       value={placePreference}
                       onChange={(e) => {
@@ -1156,13 +1156,13 @@ function JobApplicationForm() {
                   <input
                     type="text"
                     placeholder="Resume"
-                    className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg"
+                    className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg inputtextcolor"
                     style={{ marginBottom: '10px' }}
                   />
                   <input
                     type="text"
                     placeholder="Disability Certificate"
-                    className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg"
+                    className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg inputtextcolor"
                     style={{ marginBottom: '10px' }}
                   />
                   <div

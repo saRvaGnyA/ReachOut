@@ -1,5 +1,5 @@
 import {useState} from 'react';
-
+import GovernmentSchemeCard from '../GovernmentSchemeForm/GovernmentSchemeCard';
 import './JobHiringForm.css'
 function JobHiringForm(){
 
@@ -109,11 +109,11 @@ function JobHiringForm(){
             <section style={{paddingBottom:"60px"}}>
                 <header className="font-semibold text-primary-lightest text-xl px-8 mb-3">Hiring for Job</header>
                 <div className="bg-primary-light bg-opacity-75 bg-blur rounded-lg p-8 space-y-4">
-                {first ? (<div>
+                {first ? (<div className="inputtextcolor">
                     <input 
                         type="text" 
                         placeholder="Company Name" 
-                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg" 
+                        className="w-full border border-primary-lightest placeholder-primary-lightest  font-semibold py-3 px-6 bg-transparent rounded-lg inputtextcolor" 
                         style={{marginBottom:"10px"}}
                         value={companyName}
                         onChange={(e)=>{setCompanyName(e.target.value)}}
@@ -121,7 +121,7 @@ function JobHiringForm(){
                     <input 
                         type="text" 
                         placeholder="GST Number" 
-                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg" 
+                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg inputtextcolor" 
                         style={{marginBottom:"10px"}}
                         value={gstNumber}
                         onChange={(e)=>{setGstNumber(e.target.value)}}
@@ -129,7 +129,7 @@ function JobHiringForm(){
                     <input 
                         type="text" 
                         placeholder="Company Email" 
-                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg" 
+                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg inputtextcolor" 
                         style={{marginBottom:"10px"}}
                         value={companyEmail}
                         onChange={(e)=>{setCompanyEmail(e.target.value)}}
@@ -137,13 +137,13 @@ function JobHiringForm(){
                     <input 
                         type="text" 
                         placeholder="" 
-                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg" 
+                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg inputtextcolor" 
                         style={{marginBottom:"10px"}}
                         />
                     <input 
                         type="text" 
                         placeholder="" 
-                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg" 
+                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg inputtextcolor" 
                         style={{marginBottom:"10px"}}
                         />
                     <div className="flex">
@@ -154,7 +154,7 @@ function JobHiringForm(){
                     <input 
                         type="text" 
                         placeholder="Job Position" 
-                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg" 
+                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg inputtextcolor" 
                         style={{marginBottom:"10px"}}
                         value={jobPosition}
                         onChange={(e)=>{setJobPosition(e.target.value)}}
@@ -162,7 +162,7 @@ function JobHiringForm(){
                     <input 
                         type="text" 
                         placeholder="Salary" 
-                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg" 
+                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg inputtextcolor" 
                         style={{marginBottom:"10px"}}
                         value={salary}
                         onChange={(e)=>{setSalary(e.target.value)}}
@@ -170,7 +170,7 @@ function JobHiringForm(){
                     <input 
                         type="text" 
                         placeholder="Job Type" 
-                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg" 
+                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg inputtextcolor" 
                         style={{marginBottom:"10px"}}
                         value={jobType}
                         onChange={(e)=>{setJobType(e.target.value)}}
@@ -178,7 +178,7 @@ function JobHiringForm(){
                     <input 
                         type="text" 
                         placeholder="Qualification" 
-                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg" 
+                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg inputtextcolor" 
                         style={{marginBottom:"10px"}}
                         value={qualification}
                         onChange={(e)=>{setQualification(e.target.value)}}
@@ -186,7 +186,7 @@ function JobHiringForm(){
                     <input 
                         type="text" 
                         placeholder="Sector" 
-                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg" 
+                        className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg inputtextcolor" 
                         style={{marginBottom:"10px"}}
                         value={sector}
                         onChange={(e)=>{setSector(e.target.value)}}
@@ -242,6 +242,7 @@ function JobHiringForm(){
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/World_map_blank_without_borders.svg/1000px-World_map_blank_without_borders.svg.png" className="opacity-7 h-full w-auto object-cover" />
         </div>
         </div>
+        <GovernmentSchemeCard/>
         </div>
     );
 }
