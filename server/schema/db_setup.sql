@@ -33,15 +33,23 @@ CREATE TABLE "Company"
     password        VARCHAR(1000) NOT NULL
 );
 
+CREATE TABLE "Authority"
+(
+    authority_id   UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    authority_name VARCHAR(255)  NOT NULL,
+    password       VARCHAR(1000) NOT NULL
+);
+
 CREATE TABLE "Scheme"
 (
     scheme_id          UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     scheme_name        VARCHAR(1000) NOT NULL,
     scheme_description TEXT,
     scheme_type        VARCHAR(255)  NOT NULL,
-    scheme_authority   VARCHAR(255)  NOT NULL,
+    scheme_authority   UUID  NOT NULL,
     scheme_date        DATE,
-    scheme_link        VARCHAR(1000)
+    scheme_link        VARCHAR(1000),
+    CONSTRAINT scheme_auth_fk FOREIGN KEY (scheme_authority) REFERENCES "Authority" (authority_id)
 );
 
 CREATE TABLE "Grievance"
@@ -83,3 +91,21 @@ CREATE TABLE "Application"
     CONSTRAINT application_job_fk FOREIGN KEY (job_id) REFERENCES "Job" (job_id),
     CONSTRAINT application_user_fk FOREIGN KEY (applicant_id) REFERENCES "User" (user_id)
 );
+
+
+-- scheme_name=Deduction under 80U
+-- scheme_description=Persons with disabilities are eligible for income tax deduction under Section 80U. Deduction of Rs. 50,000 is provided to those with disability in the range of 40 per cent to 80 per cent. Deduction of Rs. 1,00,000 is provided to those with more than 80 per cent disability. The individual should furnish a copy of a medical certificate under section 80U along with the income tax return. The medical certificate should be based on the disability and the prescribed medical authority.
+-- scheme_type=General
+-- scheme_authority=Ministry of Finance
+-- date, link is null
+
+
+DROP TABLE "Application" CASCADE;
+DROP TABLE "Authority" CASCADE;
+DROP TABLE "Beneficiary" CASCADE;
+DROP TABLE "Scheme" CASCADE;
+DROP TABLE "Company" CASCADE;
+DROP TABLE "Grievance" CASCADE;
+DROP TABLE "Job" CASCADE;
+DROP TABLE "Scheme" CASCADE;
+DROP TABLE "User" CASCADE;

@@ -15,6 +15,7 @@ app.use('/auth', require('./routes/auth'));
 app.use('/jobs', require('./routes/jobs'));
 app.use('/grievance', require('./routes/grievances'));
 app.use('/beneficiary', require('./routes/beneficiary'));
+app.use('/govt', require('./routes/govt'));
 
 const port = process.env.PORT;
 app.listen(port, () => {
