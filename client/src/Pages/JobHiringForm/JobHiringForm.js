@@ -65,7 +65,7 @@ function JobHiringForm(){
 
     return (
         <div>
-            <div className="relative h-full text-gray-100 bg-primary rounded-lg shadow-showcase">
+            <div className="relative h-full text-gray-100 rounded-lg shadow-showcase">
         <div className="absolute left-0 -ml-12 h-full flex flex-col justify-center">
             <button className="p-5 bg-primary-light bg-opacity-90 bg-blur rounded-tl-lg rounded-tr-lg focus:outline-none">
             <svg viewBox="0 0 20 20" className="h-8 w-8 fill-accent">
