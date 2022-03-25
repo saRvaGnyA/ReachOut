@@ -1,6 +1,7 @@
 import React from 'react';
 import './Footer.css';
 import logo from '../../Logos/Logo2.png';
+import { Link } from 'react-router-dom';
 function Footer() {
   return (
     <div>
@@ -43,6 +44,10 @@ function Footer() {
         </div>
         <div className="footer-right">
           <p className="footer-company-about">
+            <div>
+              <button><Link to="/governmentlogin" style={{fontWeight:"bolder",fontSize:"larger",color:"#1DB954"}}>Government Login</Link></button>
+            </div>
+            <div style={{height:"20px"}}></div>
             <span>About the company</span>
             We offer training and skill building courses across Technology,
             Design, Management, Science and Humanities for physically challenged and disabled people.

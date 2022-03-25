@@ -50,6 +50,22 @@ function JobApplicationForm(){
         setSecond(false);
     }
 
+    async function handleSubmit () {
+        //...
+        // Make the login API call
+        const response = await fetch(`/auth/register-user`, {
+          method: 'POST',
+          body: JSON.stringify({ fullName,email,aadhar,mobile,age,password,placePreference,disabilityType,disability,severity,qualification})
+        })
+        //...
+        // Extract the JWT from the response
+        const { jwt_token } = await response.json()
+        //...
+        // Do something the token in the login method
+        //await login({ jwt_token })
+      }
+      
+
     function jobApplicationSubmit(e){
         e.preventDefault();
         /*
