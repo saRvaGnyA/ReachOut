@@ -26,7 +26,7 @@ function LoginFormJob() {
     SpeechRecognition.startListening({ continuous: true });
   const stopListening = () => SpeechRecognition.stopListening();
 
-  let [voiceFill, setVoiceFill] = useState(false);
+  let [voiceFill, setVoiceFill] = useState(true);
 
   function one() {
     setOnFocusEmail(true);
