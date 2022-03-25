@@ -2,16 +2,24 @@
   text-align: center;
 }
 
-.f1{
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@700&family=PT+Serif:ital@1&display=swap');
+
+
+body {
+  /* background-color: aliceblue !important; */
+}
+
+.f1 {
   font-family: 'Times New Roman', Times, serif;
 }
-.f2{
+
+.f2 {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 
 .App-logo {
-  height: 40vmin;
+  height        : 40vmin;
   pointer-events: none;
 }
 
@@ -23,13 +31,13 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  min-height      : 100vh;
+  display         : flex;
+  flex-direction  : column;
+  align-items     : center;
+  justify-content : center;
+  font-size       : calc(10px + 2vmin);
+  color           : white;
 }
 
 .App-link {
@@ -40,29 +48,30 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
 
 /* ===== Scrollbar CSS ===== */
-  /* Firefox */
-  * {
-    scrollbar-width: auto;
-    scrollbar-color: #707070 #000000;
-  }
+/* Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #707070 #000000;
+}
 
-  /* Chrome, Edge, and Safari */
-  *::-webkit-scrollbar {
-    width: 16px;
-  }
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 16px;
+}
 
-  *::-webkit-scrollbar-track {
-    background: #000000;
-  }
+*::-webkit-scrollbar-track {
+  background: #000000;
+}
 
-  *::-webkit-scrollbar-thumb {
-    background-color: #6e6e6e;
-    border-radius: 10px;
-    border: 3px solid #000000;
-  }
+*::-webkit-scrollbar-thumb {
+  background-color: #6e6e6e;
+  border-radius   : 10px;
+  border          : 3px solid #000000;
+}
