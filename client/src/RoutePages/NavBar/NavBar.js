@@ -1,50 +1,50 @@
-import { Navbar } from 'responsive-navbar-react'
-import 'responsive-navbar-react/dist/index.css'
+import { Navbar } from 'responsive-navbar-react';
+import 'responsive-navbar-react/dist/index.css';
 
-function NavBar(){
-    const props = {
-    items:[
-    {
+function NavBar() {
+  const props = {
+    items: [
+      {
         text: 'Home',
-        link: '/'
-    },
-    {
+        link: '/',
+      },
+      {
         text: 'Login',
-        link: '/login'
-    },
-    {
+        link: '/login',
+      },
+      {
         text: 'Apply',
-        link: '/apply'
-    },
-    {
+        link: '/apply',
+      },
+      {
         text: 'Hire',
-        link: '/hire'
-    },
-    {
-      text: 'Preferences',
-      link: '/pref'
-    },
-    {
-      text: 'Greviences',
-      link: '/grevience'
-    }
+        link: '/hire',
+      },
+      {
+        text: 'Preferences',
+        link: '/pref',
+      },
+      {
+        text: 'Greviences',
+        link: '/grevience',
+      },
     ],
-    logo:{
-      text: 'ReachOut'
+    logo: {
+      text: 'ReachOut',
     },
-    style:{
+    style: {
       barStyles: {
-        background: '#444'
+        background: '#017E7E',
       },
       sidebarStyles: {
         background: '#222',
-        buttonColor: 'white'
-      }
-    }
-    }  
-    return (
+        buttonColor: 'white',
+      },
+    },
+  };
+  return (
     <div className="home">
-    	<Navbar {...props}/>
+      <Navbar {...props} />
     </div>
   );
 }
