@@ -34,6 +34,18 @@ module.exports.addJob = async (req, res) => {
   }
 };
 
+module.exports.seeJobs = async (req, res) => {
+  try {
+    const jobs = await pool.query(
+      'SELECT * FROM "Job" AS J INNER JOIN "Company" AS C ON J.company_id = C.company_id;',
+    );
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.log(error);
+    res.status(500).json({ success: false, message: 'Internal Server Error' });
+  }
+};
+
 module.exports.applyJob = async (req, res) => {
   try {
     const user_id = req.user;

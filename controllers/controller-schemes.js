@@ -2,7 +2,9 @@ const pool = require('../postgres/pgConnect');
 
 module.exports.getSchemes = async (req, res) => {
   try {
-    const schemes = await pool.query('SELECT * FROM "Scheme"');
+    const schemes = await pool.query(
+      'SELECT S.*, A.authority_name FROM "Scheme" AS S INNER JOIN "Authority" AS A ON S.scheme_authority = A.authority_id;',
+    );
     res.status(200).json({ success: true, message: schemes.rows });
   } catch (error) {
     // eslint-disable-next-line no-console
@@ -15,10 +17,10 @@ module.exports.getSchemesByFilter = async (req, res) => {
   try {
     const { filterQuery } = req.params;
     const filteredSchemes = await pool.query(
-      `SELECT * FROM "Scheme" WHERE 
-      scheme_name ILIKE '%${filterQuery}%' OR 
-      scheme_type ILIKE '%${filterQuery}%' OR
-      scheme_authority ILIKE '%${filterQuery}%'`,
+      `SELECT S.*, A.authority_name FROM "Scheme" AS S INNER JOIN "Authority" AS A ON S.scheme_authority = A.authority_id WHERE 
+      S.scheme_name ILIKE '%${filterQuery}%' OR 
+      S.scheme_type ILIKE '%${filterQuery}%' OR
+      A.authority_name ILIKE '%${filterQuery}%'`,
     );
     res.status(200).json({ success: true, message: filteredSchemes.rows });
   } catch (error) {
@@ -27,6 +29,13 @@ module.exports.getSchemesByFilter = async (req, res) => {
     res.status(500).json({ success: false, message: 'Internal Server Error' });
   }
 };
+
+/*
+SELECT S.*, A.authority_name FROM "Scheme" AS S INNER JOIN "Authority" AS A ON S.scheme_authority = A.authority_id WHERE 
+      S.scheme_name ILIKE '%deduction%' OR 
+      S.scheme_type ILIKE '%deduction%' OR
+      A.authority_name ILIKE '%deduction%';
+*/
 
 module.exports.addScheme = async (req, res) => {
   try {

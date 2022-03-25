@@ -4,7 +4,7 @@ const router = require('express').Router();
 const jwtAuthorization = require('../middleware/jwtAuthorization');
 
 // CONTROLLERS
-const { addJob, applyJob } = require('../controllers/controller-jobs');
+const { addJob, applyJob, seeJobs } = require('../controllers/controller-jobs');
 
 // ROUTES
 
@@ -12,6 +12,7 @@ const { addJob, applyJob } = require('../controllers/controller-jobs');
 router.post('/add-job', jwtAuthorization, addJob);
 
 // for applicants
+router.get('/see-jobs', jwtAuthorization, seeJobs);
 router.post('/apply-job/:jobid', jwtAuthorization, applyJob);
 
 module.exports = router;
