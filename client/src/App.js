@@ -5,10 +5,12 @@ import NavBar from './RoutePages/NavBar/NavBar.js'
 import Footer from './RoutePages/Footer/Footer';
 import HomePage from './Pages/HomePage/HomePage.js'
 import LoginFormJob from './Pages/LoginForm/LoginFormJob/LoginFormJob';
+import LoginFormCompany from './Pages/LoginForm/LoginFormCompany/LoginFormCompany';
 import JobApplicationForm from './Pages/JobApplicationForm/JobApplicationForm';
 import JobHiringForm from './Pages/JobHiringForm/JobHiringForm';
 import GrevienceForm from './Pages/ContactUs/GrevienceForm';
 import PopUp from './Pages/PopUp/PopUp';
+import LoginFormGovernment from './Pages/LoginForm/LoginFormGovernment/LoginFormGovernment';
 
 function App() {
 
@@ -30,10 +32,12 @@ function App() {
             <NavBar/>
             <Routes>
                 <Route path="/" element={<HomePage/>} />
-                <Route exact path="/login" element={<LoginFormJob />}/>
+                <Route exact path="/userlogin" element={<LoginFormJob />}/>
+                <Route exact path="/companylogin" element={<LoginFormCompany/>}/>
                 <Route exact path="/apply" element={<JobApplicationForm />}/>
                 <Route exact path="/hire" element={<JobHiringForm />} />
                 <Route exact path="/grevience" element={<GrevienceForm/>}/>
+                <Route exact path="/governmentlogin" element={<LoginFormGovernment/>}/>
             </Routes>
             <PopUp funct={change}/>
             <Footer/>

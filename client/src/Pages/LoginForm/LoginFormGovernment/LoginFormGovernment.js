@@ -1,12 +1,11 @@
 import { useEffect, useState } from 'react';
-import './LoginFormJob.css'
+import './LoginFormGovernment.css'
 import { useSpeechSynthesis } from "react-speech-kit";
 import SpeechRecognition, { useSpeechRecognition } from "react-speech-recognition";
 
-function LoginFormJob(){
+function LoginFormGovernment(){
     const { speak } = useSpeechSynthesis();
     const { transcript, resetTranscript} = useSpeechRecognition();
-
 
 
     let [email,setEmail]=useState("");
@@ -38,11 +37,11 @@ function LoginFormJob(){
         setOnFocusEmail(true);
         setOnFocusPassword(false);
         if(email===""){
-            speak({text:"Press Insert to start and Escape to end the Email Input."});
+            speak({text:"Press Insert to start and Escape to end the input for Authority Email."});
             resetTranscript();
         }
         else{
-            speak({text:"Email already filled.Press Insert to override and escape to stop."})
+            speak({text:"Authority Email already filled.Press Insert to override and escape to stop."})
         }
     }
     function two(event){
@@ -63,11 +62,11 @@ function LoginFormJob(){
         setOnFocusEmail(false);
         setOnFocusPassword(true);
         if(password===""){
-            speak({text:"Press Insert to start and Escape to end the Password Input."});
+            speak({text:"Press Insert to start and Escape to end the input for Authority Password."});
             resetTranscript();
         }
         else{
-            speak({text:"Password already filled.Press Insert to override and escape to stop."})
+            speak({text:"Authority Password already filled.Press Insert to override and escape to stop."})
         }
     }
     function four(event){
@@ -89,11 +88,11 @@ function LoginFormJob(){
         setSignUpOnFocusEmail(false);
         setSignUpOnFocusPassword(false);
         if(signUpUsername===""){
-            speak({text:"Press Insert to start and Escape to end the Full Name input."});
+            speak({text:"Press Insert to start and Escape to end the input."});
             resetTranscript();
         }
         else{
-            speak({text:"Name already filled.Press Insert to override and escape to stop."})
+            speak({text:"Input already filled.Press Insert to override and escape to stop."})
         }
     }
     function twoSignUp(event){
@@ -115,11 +114,11 @@ function LoginFormJob(){
         setSignUpOnFocusEmail(true);
         setSignUpOnFocusPassword(false);
         if(signUpEmail===""){
-            speak({text:"Press Insert to start and Escape to end the Email Input."});
+            speak({text:"Press Insert to start and Escape to end the input for Authority Email."});
             resetTranscript();
         }
         else{
-            speak({text:"Email already filled.Press Insert to override and escape to stop."})
+            speak({text:"Authority Email already filled.Press Insert to override and escape to stop."})
         }
     }
     function fourSignUp(event){
@@ -141,11 +140,11 @@ function LoginFormJob(){
         setSignUpOnFocusEmail(false);
         setSignUpOnFocusPassword(true);
         if(signUpPassword===""){
-            speak({text:"Press Insert to start and Escape to end the Password input."});
+            speak({text:"Press Insert to start and Escape to end the input for Authority Password"});
             resetTranscript();
         }
         else{
-            speak({text:"Password already filled.Press Insert to override and escape to stop."})
+            speak({text:"Authority Password already filled.Press Insert to override and escape to stop."})
         }
     }
     function sixSignUp(event){
@@ -175,36 +174,6 @@ function LoginFormJob(){
         console.log(signUpPassword);
     }
 
-    async function handleLoginSubmit () {
-        //...
-        // Make the login API call
-        const response = await fetch(`/auth/login-user`, {
-          method: 'POST',
-          body: JSON.stringify({email,password})
-        })
-        //...
-        // Extract the JWT from the response
-        const { jwt_token } = await response.json()
-        //...
-        // Do something the token in the login method
-        
-    }
-
-    async function handleSignUpSubmit () {
-        //...
-        // Make the login API call
-        const response = await fetch(``, {
-          method: 'POST',
-          body: JSON.stringify({signUpEmail,signUpPassword,signUpUsername})
-        })
-        //...
-        // Extract the JWT from the response
-        const { jwt_token } = await response.json()
-        //...
-        // Do something the token in the login method
-        
-    }
-
     return (
         <div>
         <div className="section">
@@ -227,7 +196,7 @@ function LoginFormJob(){
                                                             type="email" 
                                                             name="logemail" 
                                                             className="form-style" 
-                                                            placeholder="Your Email" 
+                                                            placeholder="Authority Email" 
                                                             id="logemail" 
                                                             autocomplete="off"
                                                             value={onFocusEmail?(transcript):(email)}
@@ -240,7 +209,7 @@ function LoginFormJob(){
                                                             type="email" 
                                                             name="logemail" 
                                                             className="form-style" 
-                                                            placeholder="Your Email" 
+                                                            placeholder="Authority Email" 
                                                             id="logemail" 
                                                             autocomplete="off"
                                                             value={email}
@@ -255,7 +224,7 @@ function LoginFormJob(){
                                                             type="password" 
                                                             name="logpass" 
                                                             className="form-style" 
-                                                            placeholder="Your Password" 
+                                                            placeholder="Authority Password" 
                                                             id="logpass" 
                                                             autocomplete="off"
                                                             value={onFocusPassword?(transcript):(password)}
@@ -267,7 +236,7 @@ function LoginFormJob(){
                                                             type="password" 
                                                             name="logpass" 
                                                             className="form-style" 
-                                                            placeholder="Your Password" 
+                                                            placeholder="Authority Password" 
                                                             id="logpass" 
                                                             autocomplete="off"
                                                             value={password}
@@ -284,41 +253,14 @@ function LoginFormJob(){
                                     <div className="card-back">
                                         <div className="center-wrap">
                                             <div className="section text-center">
-                                                <h4 className="mb-4 pb-3">Sign Up</h4>
-                                                <div className="form-group">
-                                                    {voiceFill?(
-                                                        <input 
-                                                        type="text" 
-                                                        name="logname" 
-                                                        className="form-style" 
-                                                        placeholder="Your Full Name" 
-                                                        id="logname" 
-                                                        autocomplete="off"
-                                                        value={signUpOnFocusUsername?(transcript):(signUpUsername)}
-                                                        onFocus={oneSignUp}
-                                                        onKeyDown={(e)=>twoSignUp(e)}
-                                                        onChange={(e)=>{setSignUpUsername(e.target.value)}}
-                                                        />):(
-                                                        <input 
-                                                        type="text" 
-                                                        name="logname" 
-                                                        className="form-style" 
-                                                        placeholder="Your Full Name" 
-                                                        id="logname" 
-                                                        autocomplete="off"
-                                                        value={signUpUsername}
-                                                        onChange={(e)=>{setSignUpUsername(e.target.value)}}
-                                                        />
-                                                        )}
-                                                    <i className="input-icon uil uil-user"></i>
-                                                </div>	
+                                                <h4 className="mb-4 pb-3">Sign Up</h4>	
                                                 <div className="form-group mt-2">
                                                     {voiceFill?(
                                                         <input 
                                                         type="email" 
                                                         name="logemail" 
                                                         className="form-style" 
-                                                        placeholder="Your Email" 
+                                                        placeholder="Authority Email" 
                                                         id="logemail" 
                                                         autocomplete="off"
                                                         value={signUpOnFocusEmail?(transcript):(signUpEmail)}
@@ -330,7 +272,7 @@ function LoginFormJob(){
                                                         type="email" 
                                                         name="logemail" 
                                                         className="form-style" 
-                                                        placeholder="Your Email" 
+                                                        placeholder="Authority Email" 
                                                         id="logemail" 
                                                         autocomplete="off"
                                                         value={signUpEmail}
@@ -345,7 +287,7 @@ function LoginFormJob(){
                                                         type="password" 
                                                         name="logpass" 
                                                         className="form-style" 
-                                                        placeholder="Your Password" 
+                                                        placeholder="Authority Password" 
                                                         id="logpass" 
                                                         autocomplete="off"
                                                         value={signUpOnFocusPassword?(transcript):(signUpPassword)}
@@ -357,7 +299,7 @@ function LoginFormJob(){
                                                         type="password" 
                                                         name="logpass" 
                                                         className="form-style" 
-                                                        placeholder="Your Password" 
+                                                        placeholder="Authority Password" 
                                                         id="logpass" 
                                                         autocomplete="off"
                                                         value={signUpPassword}
@@ -381,4 +323,4 @@ function LoginFormJob(){
     );
 }
 
-export default LoginFormJob;
+export default LoginFormGovernment;

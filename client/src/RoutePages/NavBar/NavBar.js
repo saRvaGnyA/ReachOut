@@ -9,8 +9,16 @@ function NavBar(){
         link: '/'
     },
     {
-        text: 'Login',
-        link: '/login'
+        text: 'User Login',
+        link: '/userlogin'
+    },
+    {
+      text: 'Company Login',
+      link: '/companylogin'
+    },
+    {
+      text: 'Government Login',
+      link: '/governmentlogin'
     },
     {
         text: 'Apply',
