@@ -9,6 +9,7 @@ import JobApplicationForm from './Pages/JobApplicationForm/JobApplicationForm';
 import JobHiringForm from './Pages/JobHiringForm/JobHiringForm';
 import GrevienceForm from './Pages/ContactUs/GrevienceForm';
 import PopUp from './Pages/PopUp/PopUp';
+import LoginFormCompany from './Pages/LoginForm/LoginFormCompany/LoginFormCompany';
 
 function App() {
 
@@ -34,6 +35,7 @@ function App() {
                 <Route exact path="/apply" element={<JobApplicationForm />}/>
                 <Route exact path="/hire" element={<JobHiringForm />} />
                 <Route exact path="/grevience" element={<GrevienceForm/>}/>
+                <Route exact path="/companyloginform" element={<LoginFormCompany/>}/>
             </Routes>
             <PopUp funct={change}/>
             <Footer/>
