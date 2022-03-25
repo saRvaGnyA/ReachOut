@@ -37,7 +37,7 @@ function LoginFormCompany() {
 
   // AAGE ISPE DHYAN RAKH BSDK
   //   let [voiceFill, setVoiceFill] = useState(true);
-  let [voiceFill, setVoiceFill] = useState(false);
+  let [voiceFill, setVoiceFill] = useState(true);
 
   function one() {
     setOnFocusEmail(true);

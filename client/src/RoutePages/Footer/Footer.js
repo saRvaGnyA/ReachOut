@@ -1,6 +1,8 @@
 import React from 'react';
 import './Footer.css';
 import logo from '../../Logos/Logo2.png';
+import { Link } from 'react-router-dom';
+
 function Footer() {
   return (
     <div>
@@ -34,6 +36,20 @@ function Footer() {
             <p></p>
           </div>
           <div>
+          <div>
+              <button>
+                <Link
+                  to="/governmentlogin"
+                  style={{
+                    fontWeight: 'bolder',
+                    fontSize: 'larger',
+                    color: '#1DB954',
+                  }}
+                >
+                  Government Login
+                </Link>
+              </button>
+            </div>
             <i className="fa fa-envelope"></i>
             <p>
               <a href="mailto:support@reachOut.com">support@reachOut.com</a>

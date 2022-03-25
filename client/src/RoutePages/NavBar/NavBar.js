@@ -1,6 +1,5 @@
 import { Navbar } from 'responsive-navbar-react';
 import 'responsive-navbar-react/dist/index.css';
-import FontSizeChanger from 'react-font-size-changer';
 
 function NavBar() {
   const props = {
@@ -10,8 +9,12 @@ function NavBar() {
         link: '/',
       },
       {
-        text: 'Login',
-        link: '/login',
+        text: 'User Login',
+        link: '/userlogin',
+      },
+      {
+        text: 'Company Login',
+        link: '/companylogin',
       },
       {
         text: 'Apply',
@@ -44,49 +47,8 @@ function NavBar() {
     },
   };
   return (
-    <div>
-      <div className="home">
-        <Navbar {...props} />
-      </div>
-
-      <div style={{ display: 'flex', justifyContent: 'end' }}>
-        <FontSizeChanger
-          targets={['.textsize']}
-          onChange={(element, newValue, oldValue) => {
-            console.log(element, newValue, oldValue);
-          }}
-          options={{
-            stepSize: 1,
-            range: 3,
-          }}
-          customButtons={{
-            up: (
-              <span
-                style={{ fontSize: '20px' }}
-                className="material-icons fontup-button"
-              >
-                text_increase
-              </span>
-            ),
-
-            down: (
-              <span style={{ fontSize: '20px' }} className="material-icons">
-                text_decrease
-              </span>
-            ),
-          }}
-          style={{
-            marginBottom: '100px',
-            paddingBottom: '200px',
-            float: 'left',
-            position: 'relative',
-            left: '0px',
-            top: '0px',
-            zIndex: '1000',
-            backgroundColor: 'transparent',
-          }}
-        />
-      </div>
+    <div className="home">
+      <Navbar {...props} />
     </div>
   );
 }
