@@ -17,10 +17,6 @@ function NavBar(){
       link: '/companylogin'
     },
     {
-      text: 'Government Login',
-      link: '/governmentlogin'
-    },
-    {
         text: 'Apply',
         link: '/apply'
     },
