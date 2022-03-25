@@ -1,5 +1,6 @@
 import './JobApplicationForm.css';
 import { useState } from 'react';
+import { post } from 'axios';
 import { useSpeechSynthesis } from 'react-speech-kit';
 import SpeechRecognition, {
   useSpeechRecognition,
@@ -30,7 +31,7 @@ function JobApplicationForm() {
     SpeechRecognition.startListening({ continuous: true });
   const stopListening = () => SpeechRecognition.stopListening();
 
-  let [voiceFill, setVoiceFill] = useState(true);
+  let [voiceFill, setVoiceFill] = useState(false);
 
   const { speak } = useSpeechSynthesis();
   const { transcript, resetTranscript } = useSpeechRecognition();
@@ -103,21 +104,42 @@ function JobApplicationForm() {
     //await login({ jwt_token })
   }
 
-  function jobApplicationSubmit(e) {
+  async function jobApplicationSubmit(e) {
     e.preventDefault();
-        console.log(fullName);
-        console.log(mobile);
-        console.log(email);
-        console.log(aadhar);
-        console.log(age);
-        console.log(password);
-        console.log(disabilityType);
-        console.log(disability);
-        console.log(severity);
-        console.log(jobPreference);
-        console.log(qualification);
-        console.log(sector);
-        console.log(placePreference);
+    console.log(fullName.split(' '));
+    console.log(mobile);
+    console.log(email);
+    console.log(aadhar);
+    console.log(age);
+    console.log(password);
+    console.log(disabilityType);
+    console.log(disability);
+    console.log(severity);
+    console.log(jobPreference);
+    console.log(qualification);
+    console.log(sector);
+    console.log(placePreference);
+    const names = fullName.split('');
+    const baseurl = 'https://reachout-sql-server.herokuapp.com';
+    const {
+      data: { success, token },
+    } = await post(`${baseurl}/auth/register-user`, {
+      first_name: names[0],
+      last_name: names[1],
+      aadhar,
+      mobile,
+      email,
+      age,
+      password,
+      place: placePreference,
+      disability_type: disabilityType,
+      disability,
+      severity,
+      qualifications: qualification,
+    });
+    if (success) {
+      localStorage.setItem('token', token);
+    }
   }
 
   function one() {
@@ -890,7 +912,7 @@ function JobApplicationForm() {
                   <div>
                     {voiceFill ? (
                       <input
-                        type="text"
+                        type="password"
                         placeholder="Create Password"
                         className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg"
                         style={{ marginBottom: '10px' }}
@@ -903,7 +925,7 @@ function JobApplicationForm() {
                       />
                     ) : (
                       <input
-                        type="email"
+                        type="password"
                         name="email"
                         className="w-full border border-primary-lightest placeholder-primary-lightest text-sm font-semibold py-3 px-6 bg-transparent rounded-lg"
                         style={{ marginBottom: '10px' }}
@@ -942,7 +964,7 @@ function JobApplicationForm() {
                         autocomplete="off"
                         value={disabilityType}
                         onChange={(e) => {
-                          setDisability(e.target.value);
+                          setDisabilityType(e.target.value);
                         }}
                       />
                     )}
