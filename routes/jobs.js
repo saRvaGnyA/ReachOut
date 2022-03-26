@@ -15,10 +15,10 @@ const {
 
 // for companies
 router.post('/add-job', jwtAuthorization, addJob);
-router.get('/see-jobs-company', jwtAuthorization, seeJobsCompany);
+// router.get('/see-jobs-company', jwtAuthorization, seeJobsCompany);
 
 // for applicants
-router.get('/see-jobs', jwtAuthorization, seeJobs);
+router.get('/see-jobs', seeJobs);
 router.post('/apply-job/:jobid', jwtAuthorization, applyJob);
 
 module.exports = router;
