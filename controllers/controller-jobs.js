@@ -51,7 +51,7 @@ module.exports.seeJobsCompany = async (req, res) => {
   try {
     const company_id = req.user;
     const jobs = await pool.query(
-      'SELECT * FROM "Job" AS J INNER JOIN "Company" AS C ON J.company_id = C.company_id WHERE C.company_id = $1;',
+      'SELECT * FROM "Job" AS J INNER JOIN "Company" AS C ON J.company_id = C.company_id WHERE J.company_id = $1;',
       [company_id],
     );
     res.status(200).json({ success: true, job: jobs.rows });
