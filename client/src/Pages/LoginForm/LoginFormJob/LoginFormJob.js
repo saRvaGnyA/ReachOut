@@ -6,6 +6,8 @@ import SpeechRecognition, {
   useSpeechRecognition,
 } from 'react-speech-recognition';
 
+import { useNavigate } from 'react-router-dom';
+
 function LoginFormJob() {
   const { speak } = useSpeechSynthesis();
   const { transcript, resetTranscript } = useSpeechRecognition();
@@ -166,7 +168,11 @@ function LoginFormJob() {
       resetTranscript();
     }
   }
-
+  let navigate = useNavigate();
+  function RoutetoHire() {
+    let path = `/showjobs`;
+    navigate(path);
+  }
   const baseurl = 'https://reachout-sql-server.herokuapp.com';
 
   async function submitLoginResponse(e) {
@@ -182,6 +188,7 @@ function LoginFormJob() {
     if (success) {
       localStorage.setItem('token', token);
       localStorage.setItem('user',"true");
+      RoutetoHire();
     }
   }
   function submitSignUpResponse(e) {

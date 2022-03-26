@@ -32,10 +32,6 @@ function NavBar() {
         link: '/hire',
       },
       {
-        text:'Logout',
-        link: '/home',
-      },
-      {
         text: 'Greviences',
         link: '/grevience',
       },
@@ -77,7 +73,8 @@ function NavBar() {
       },
       {
         text:'Logout',
-        link: '/home',
+        onclick:logout(),
+        link: '/',
       },
       {
         text: 'Greviences',
@@ -100,7 +97,7 @@ function NavBar() {
   return (
     <div className="home">
       
-      {localStorage.getItem("user")==="true" ? (<Navbar {...props}/>):(<Navbar {...crops}/>)}
+      {localStorage.getItem("user") ? (<Navbar {...crops}/>):(<Navbar {...props}/>)}
       
      <div style={{display:"flex", justifyContent:"end"}}>
       

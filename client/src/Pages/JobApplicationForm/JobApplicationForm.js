@@ -31,7 +31,7 @@ function JobApplicationForm() {
     SpeechRecognition.startListening({ continuous: true });
   const stopListening = () => SpeechRecognition.stopListening();
 
-  let [voiceFill, setVoiceFill] = useState(false);
+  let [voiceFill, setVoiceFill] = useState(true);
 
   const { speak } = useSpeechSynthesis();
   const { transcript, resetTranscript } = useSpeechRecognition();
@@ -812,7 +812,7 @@ function JobApplicationForm() {
                         }}
                       />
                     )}
-                    {voiceFill ? (
+                    {false ? (
                       <input
                         type="text"
                         placeholder="Email"
@@ -910,7 +910,7 @@ function JobApplicationForm() {
                 )}
                 {second ? (
                   <div>
-                    {voiceFill ? (
+                    {false ? (
                       <input
                         type="password"
                         placeholder="Create Password"
