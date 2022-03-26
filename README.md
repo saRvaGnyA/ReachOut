@@ -27,7 +27,7 @@
 
 ## Resources 🔨
 
-- [Vercel App](reach-out-two.vercel.app)
+- [Vercel App](https://reach-out-two.vercel.app/)
 
 ## Features :man_technologist:
 
