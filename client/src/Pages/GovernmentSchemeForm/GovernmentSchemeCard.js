@@ -1,37 +1,28 @@
+import { useEffect, useState } from 'react';
 import './GovernmentSchemeCard.css';
 
-function GovernmentSchemeCard() {
+function GovernmentSchemeCard({ scheme }) {
   return (
     <div>
       <div class="main-container">
         <div class="heading">
-          <h3 class="heading__title">Government Schemes</h3>
-          <p class="heading__credits">
-            <a
-              class="heading__link"
-              target="_blank"
-              href="https://dribbble.com/sl"
-            ></a>
-          </p>
+          <h3 class="heading__title">Added Schemes</h3>
         </div>
-        <div class="cards">
-          <div class="card card-3">
-            <div class="card__icon">
-              <i class="fas fa-bolt"></i>
-            </div>
-            <p class="card__exit">
-              <i class="fas fa-times"></i>
-            </p>
-            <h4 class="card__title">Ut enim ad minim veniam.</h4>
-            <p class="card__apply">
-              <a class="card__link" href="#">
-                Apply Now <i class="fas fa-arrow-right"></i>
-              </a>
-            </p>
+        {scheme && (
+          <div class="cards">
+            {scheme.map((s) => {
+              return (
+                <div class="card card-3">
+                  <p class="card__exit">
+                    <i class="fas fa-times"></i>
+                  </p>
+                  <h4 class="card__title">{s.scheme_name}</h4>
+                  <h4 class="card__title">{s.scheme_description}</h4>
+                </div>
+              );
+            })}
           </div>
-         
-         
-        </div>
+        )}
       </div>
     </div>
   );
