@@ -4,12 +4,18 @@ const router = require('express').Router();
 const jwtAuthorization = require('../middleware/jwtAuthorization');
 
 // CONTROLLERS
-const { addJob, applyJob, seeJobs } = require('../controllers/controller-jobs');
+const {
+  addJob,
+  applyJob,
+  seeJobs,
+  seeJobsCompany,
+} = require('../controllers/controller-jobs');
 
 // ROUTES
 
 // for companies
 router.post('/add-job', jwtAuthorization, addJob);
+router.get('/see-jobs-company', jwtAuthorization, seeJobsCompany);
 
 // for applicants
 router.get('/see-jobs', jwtAuthorization, seeJobs);

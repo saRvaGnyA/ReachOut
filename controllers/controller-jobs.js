@@ -39,6 +39,22 @@ module.exports.seeJobs = async (req, res) => {
     const jobs = await pool.query(
       'SELECT * FROM "Job" AS J INNER JOIN "Company" AS C ON J.company_id = C.company_id;',
     );
+    res.status(200).json({ success: true, job: jobs.rows });
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.log(error);
+    res.status(500).json({ success: false, message: 'Internal Server Error' });
+  }
+};
+
+module.exports.seeJobsCompany = async (req, res) => {
+  try {
+    const company_id = req.user;
+    const jobs = await pool.query(
+      'SELECT * FROM "Job" AS J INNER JOIN "Company" AS C ON J.company_id = C.company_id WHERE C.company_id = $1;',
+      [company_id],
+    );
+    res.status(200).json({ success: true, job: jobs.rows });
   } catch (error) {
     // eslint-disable-next-line no-console
     console.log(error);
