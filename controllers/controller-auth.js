@@ -40,9 +40,9 @@ module.exports.registerUser = async (req, res) => {
       [
         first_name,
         last_name,
-        aadhar,
+        aadhar.split(' ').join(''),
         email,
-        mobile,
+        mobile.split(' ').join(''),
         age,
         bcryptPW,
         disability_certificate,
