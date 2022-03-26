@@ -1,7 +1,12 @@
 import { Navbar } from 'responsive-navbar-react';
 import 'responsive-navbar-react/dist/index.css';
 import FontSizeChanger from 'react-font-size-changer';
+import {useState} from 'react';
 
+function logout(){
+  localStorage.removeItem("token");
+  localStorage.removeItem("user");
+}
 
 function NavBar() {
   const props = {
@@ -27,8 +32,52 @@ function NavBar() {
         link: '/hire',
       },
       {
-        text: 'Preferences',
-        link: '/pref',
+        text:'Logout',
+        link: '/home',
+      },
+      {
+        text: 'Greviences',
+        link: '/grevience',
+      },
+    ],
+    logo: {
+      text: 'ReachOut',
+    },
+    style: {
+      barStyles: {
+        background: '#444',
+      },
+      sidebarStyles: {
+        background: '#222',
+        buttonColor: 'white',
+      },
+    },
+  };
+  const crops = {
+    items: [
+      {
+        text: 'Home',
+        link: '/',
+      },
+      {
+        text: 'Schemes',
+        link: '/showschemes',
+      },
+      {
+        text: 'Jobs',
+        link: '/showjobs',
+      },
+      {
+        text: 'Apply',
+        link: '/apply',
+      },
+      {
+        text: 'Hire',
+        link: '/hire',
+      },
+      {
+        text:'Logout',
+        link: '/home',
       },
       {
         text: 'Greviences',
@@ -50,7 +99,8 @@ function NavBar() {
   };
   return (
     <div className="home">
-      <Navbar {...props} />
+      
+      {localStorage.getItem("user")==="true" ? (<Navbar {...props}/>):(<Navbar {...crops}/>)}
       
      <div style={{display:"flex", justifyContent:"end"}}>
       

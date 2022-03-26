@@ -181,6 +181,7 @@ function LoginFormJob() {
     });
     if (success) {
       localStorage.setItem('token', token);
+      localStorage.setItem('user',"true");
     }
   }
   function submitSignUpResponse(e) {
