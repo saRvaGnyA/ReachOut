@@ -5,6 +5,7 @@ import { useSpeechSynthesis } from 'react-speech-kit';
 import SpeechRecognition, {
   useSpeechRecognition,
 } from 'react-speech-recognition';
+import {useNavigate} from "react-router-dom"
 
 function LoginFormGovernment() {
   const { speak } = useSpeechSynthesis();
@@ -26,9 +27,15 @@ function LoginFormGovernment() {
     SpeechRecognition.startListening({ continuous: true });
   const stopListening = () => SpeechRecognition.stopListening();
 
-    let [voiceFill, setVoiceFill] = useState(true);
-  // let [voiceFill, setVoiceFill] = useState(false);
+    // let [voiceFill, setVoiceFill] = useState(true);
+  let [voiceFill, setVoiceFill] = useState(false);
 
+  // routing
+  let navigate = useNavigate();
+  function RoutetoHire() {
+    let path = `/GovtHire`;
+    navigate(path);
+}
   function one() {
     setOnFocusEmail(true);
     setOnFocusPassword(false);
@@ -180,6 +187,7 @@ function LoginFormGovernment() {
     });
     if (success) {
       localStorage.setItem('token', token);
+      RoutetoHire();
     }
   };
   async function submitSignUpResponse(e) {
@@ -194,6 +202,7 @@ function LoginFormGovernment() {
     });
     if (success) {
       localStorage.setItem('token', token);
+      RoutetoHire();
     }
   }
 
