@@ -8,21 +8,30 @@ function GovernmentSchemeCard({ scheme }) {
         <div class="heading">
           <h3 class="heading__title">Added Schemes</h3>
         </div>
-        {scheme && (
-          <div class="cards">
+        <table class="table">
+          <thead style={{color:"white"}}>
+            <tr>
+              <th>Contact ID</th>
+              <th>Power</th>
+              <th>Expiration</th>
+              <th>Value</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
             {scheme.map((s) => {
               return (
-                <div class="card card-3">
-                  <p class="card__exit">
-                    <i class="fas fa-times"></i>
-                  </p>
-                  <h4 class="card__title">{s.scheme_name}</h4>
-                  <h4 class="card__title">{s.scheme_description}</h4>
-                </div>
+                <tr style={{color:"white"}}>
+                  <td data-label="Contact ID">{s.scheme_name}</td>
+                  <td data-label="Power">{s.scheme_description}</td>
+                  <td data-label="Expiration">{s.authority_name}</td>
+                  <td data-label="Value">{s.scheme_type}</td>
+                </tr>
               );
             })}
-          </div>
-        )}
+          </tbody>
+        </table>
+        {scheme && <div class="cards"></div>}
       </div>
     </div>
   );
