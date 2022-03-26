@@ -28,6 +28,7 @@ function App() {
 
   return (
     <div className={font ? 'f1' : 'f2'}>
+      <div className="textsize">
       <Router>
         <div>
           <NavBar />
@@ -60,6 +61,7 @@ function App() {
           <Footer />
         </div>
       </Router>
+      </div>
     </div>
   );
 }
