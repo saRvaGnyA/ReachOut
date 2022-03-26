@@ -24,6 +24,11 @@
  </tr>
 </table>
 
+
+## Resources 🔨
+
+- [Vercel App](reach-out-two.vercel.app)
+
 ## Features :man_technologist:
 
 #### Added
@@ -88,6 +93,3 @@
 - [@Ketaki Deshmukh](https://github.com/KetakiMDeshmukh)
 - [@Devansh Joshi](https://github.com/devdev29)
 
-## Resources 🔨
-
-- [Vercel App]()
