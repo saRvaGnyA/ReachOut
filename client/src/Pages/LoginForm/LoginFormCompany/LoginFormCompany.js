@@ -5,6 +5,7 @@ import { useSpeechSynthesis } from 'react-speech-kit';
 import SpeechRecognition, {
   useSpeechRecognition,
 } from 'react-speech-recognition';
+import { useNavigate } from 'react-router-dom';
 
 function LoginFormCompany() {
   const { speak } = useSpeechSynthesis();
@@ -37,7 +38,7 @@ function LoginFormCompany() {
 
   // AAGE ISPE DHYAN RAKH BSDK
   //   let [voiceFill, setVoiceFill] = useState(true);
-  let [voiceFill, setVoiceFill] = useState(true);
+  let [voiceFill, setVoiceFill] = useState(false);
 
   function one() {
     setOnFocusEmail(true);
@@ -320,6 +321,13 @@ function LoginFormCompany() {
 
   const baseurl = 'https://reachout-sql-server.herokuapp.com';
 
+  // routing
+  let navigate = useNavigate();
+  function RoutetoHire() {
+    let path = `/hire`;
+    navigate(path);
+  }
+
   async function submitLoginResponse(e) {
     e.preventDefault();
     console.log(email);
@@ -332,6 +340,7 @@ function LoginFormCompany() {
     });
     if (success) {
       localStorage.setItem('token', token);
+      RoutetoHire();
     }
   }
   async function submitSignUpResponse(e) {
@@ -352,6 +361,7 @@ function LoginFormCompany() {
     });
     if (success) {
       localStorage.setItem('token', token);
+      RoutetoHire();
     }
   }
 
