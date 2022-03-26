@@ -15,6 +15,7 @@ import GovernmentScheme from './Pages/GovernmentSchemeForm/GovernmentScheme';
 import GovernmentSchemePage from './Pages/GovernmentSchemeForm/GovernmentSchemePage';
 import GovernmentSchemeCard from './Pages/GovernmentSchemeForm/GovernmentSchemeCard';
 import GovtHiringForm from './Pages/JobHiringForm/GovtHiring';
+import ShowSchemes from './Pages/ShowSchemes/ShowSchemes';
 function App() {
   let [font, setFont] = useState(true);
 
@@ -40,6 +41,7 @@ function App() {
             <Route exact path="/hire" element={<JobHiringForm />} />
             <Route exact path="/grevience" element={<GrevienceForm />} />
             <Route exact path="/govthire" element={<GovtHiringForm />} />
+            <Route exact path="/showschemes" element={<ShowSchemes />} />
             <Route
               exact
               path="/governmentlogin"
