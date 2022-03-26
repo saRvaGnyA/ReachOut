@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import GovernmentSchemeCard from '../GovernmentSchemeForm/GovernmentSchemeCard';
+import GovernmentSchemeCard1 from '../GovernmentSchemeForm/GovernmentSchemeCard1';
 import { post, get } from 'axios';
 
 import './GovtHiring.css';
@@ -39,10 +40,10 @@ function GovtHiringForm() {
 
   const getSchemes = async () => {
     const {
-      data: { message },
-    } = await get(`${baseurl}/schemes/get-schemes`);
-    console.log(message);
-    setScheme(message);
+      data: { job },
+    } = await get(`${baseurl}/jobs/see-jobs`);
+    console.log(job);
+    setScheme(job);
   };
 
   useEffect(() => {
@@ -160,7 +161,7 @@ function GovtHiringForm() {
           />
         </div>
       </div>
-      <GovernmentSchemeCard scheme={scheme} />
+      {scheme && <GovernmentSchemeCard1 scheme={scheme} />}
     </div>
   );
 }
