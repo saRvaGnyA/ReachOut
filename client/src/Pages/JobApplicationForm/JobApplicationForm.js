@@ -687,7 +687,7 @@ function JobApplicationForm() {
       console.log(transcript);
       stopListening();
       console.log('Listening stopped');
-      setSector(transcript);
+      setPlacePreference(transcript);
       resetTranscript();
     }
   }
