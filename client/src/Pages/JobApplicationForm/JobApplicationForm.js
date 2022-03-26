@@ -5,6 +5,7 @@ import { useSpeechSynthesis } from 'react-speech-kit';
 import SpeechRecognition, {
   useSpeechRecognition,
 } from 'react-speech-recognition';
+import { useNavigate } from 'react-router-dom';
 
 function JobApplicationForm() {
   let [first, setFirst] = useState(true);
@@ -104,6 +105,12 @@ function JobApplicationForm() {
     //await login({ jwt_token })
   }
 
+  let navigate = useNavigate();
+  function RoutetoHire() {
+    let path = `/showjobs`;
+    navigate(path);
+  }
+
   async function jobApplicationSubmit(e) {
     e.preventDefault();
     console.log(fullName.split(' '));
@@ -139,6 +146,7 @@ function JobApplicationForm() {
     });
     if (success) {
       localStorage.setItem('token', token);
+      RoutetoHire();
     }
   }
 
