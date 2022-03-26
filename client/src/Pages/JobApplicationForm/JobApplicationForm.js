@@ -794,7 +794,7 @@ function JobApplicationForm() {
                         onFocus={threeSignUp}
                         onKeyDown={(e) => fourSignUp(e)}
                         onChange={(e) => {
-                          setFullName(e.target.value);
+                          setMobile(e.target.value);
                         }}
                       />
                     ) : (
@@ -822,7 +822,7 @@ function JobApplicationForm() {
                         onFocus={fiveSignUp}
                         onKeyDown={(e) => sixSignUp(e)}
                         onChange={(e) => {
-                          setFullName(e.target.value);
+                          setEmail(e.target.value);
                         }}
                       />
                     ) : (
@@ -878,7 +878,7 @@ function JobApplicationForm() {
                         onFocus={nineSignUp}
                         onKeyDown={(e) => tenSignUp(e)}
                         onChange={(e) => {
-                          setAadhar(e.target.value);
+                          setAge(e.target.value);
                         }}
                       />
                     ) : (
@@ -1003,7 +1003,7 @@ function JobApplicationForm() {
                         onFocus={seventeenSignUp}
                         onKeyDown={(e) => eighteenSignUp(e)}
                         onChange={(e) => {
-                          setDisability(e.target.value);
+                          setSeverity(e.target.value);
                         }}
                       />
                     ) : (
