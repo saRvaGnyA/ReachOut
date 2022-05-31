@@ -1,6 +1,6 @@
 <h1 align="center">
   <a href="https://github.com/smitsekhadiaa/ReachOut">
-    <img src="https://github.com/saRvaGnyA/ReachOut/raw/main/client/src/Logo2.png" alt="ReachOut" width="250" height="250">
+    <img src="https://github.com/saRvaGnyA/ReachOut/raw/main/client/src/Logos/Logo2.png" alt="ReachOut" width="250" height="250">
   </a>
   <br>
   ReachOut
