@@ -33,14 +33,15 @@
 
 #### Added
 - The entire website will designed with accessibility (a11y) at the forefront.
-- Designing web components keeping visually impaired in mind
-- Voice and keyboard navigation for better accessibility
-- Speech to Text for search and navigation
-- Text to Speech for registration, login and schemes search
+- Designing web components keeping visually impaired in mind.
+- Voice and keyboard navigation for better accessibility.
+- Speech to Text for search and navigation.
+- Text to Speech for registration, login and schemes search.
+- Google Maps plotting the job positions available within the distance specified by the user.
 - Govt authorities can add the schemes for the disabled, and the disabled users can benefit from these schemes without leaving the portal. 
-- Companies can register their job positions, and people with special needs can apply for those jobs
-- Companies can hire test candidates for accessibility testing of their products
-- Backend and Database Connectivity
+- Companies can register their job positions, and people with special needs can apply for those jobs.
+- Companies can hire test candidates for accessibility testing of their products.
+- Backend and Database Connectivity.
 
 #### Partially Added
 - Recommendation System for Govt Schemes
